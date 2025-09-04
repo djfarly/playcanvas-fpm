@@ -34,12 +34,6 @@ export function Scene() {
 
       {/* Player capsule */}
       <Entity name="Player" position={[0, 1, 0]}>
-        <Script
-          script={FirstPersonMovement}
-          power={2500}
-          jumpPower={10}
-          lookSpeed={0.25}
-        />
         <Collision type="capsule" radius={0.5} height={2} axis={1} />
         <RigidBody
           type="dynamic"
@@ -48,6 +42,12 @@ export function Scene() {
           angularFactor={[0, 0, 0]}
           friction={0.75}
           restitution={0.5}
+        />
+        <Script
+          script={FirstPersonMovement}
+          power={2500}
+          jumpPower={10}
+          lookSpeed={0.25}
         />
       </Entity>
     </>
